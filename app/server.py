@@ -30,7 +30,9 @@ async def send_call_analyzed_webhook(call_data: Dict[Any, Any]) -> bool:
     }
 
     try:
+        print(f"recording_url: {call_data.recording_url}")
         if call_data.retell_llm_dynamic_variables.get('contact_recording') == "true":
+            print(f"recording_url: {call_data.recording_url}")
             webhook_payload = {
                 "to_number": call_data.to_number,
                 "recording_url": call_data.recording_url
