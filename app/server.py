@@ -15,7 +15,6 @@ from .custom_types import (
 )
 from .llm import LlmClient  # or use .llm_with_func_calling
 
-
 clientRetell = Retell(api_key=os.getenv("RETELL_API_KEY"))
 
 load_dotenv(override=True)
@@ -62,7 +61,6 @@ async def send_call_analyzed_webhook(call_data: Dict[Any, Any]) -> bool:
         error_message = f"Unexpected error sending webhook: {str(e)}"
         print(error_message)
         raise HTTPException(status_code=500, detail=error_message)
-
 
 
 # Handle webhook from Retell server. This is used to receive events from Retell server.
@@ -141,9 +139,9 @@ async def websocket_handler(websocket: WebSocket, call_id: str):
             if request_json["interaction_type"] == "ping_pong":
                 await websocket.send_json({
                     "response_type":
-                    "ping_pong",
+                        "ping_pong",
                     "timestamp":
-                    request_json["timestamp"],
+                        request_json["timestamp"],
                 })
                 return
 
@@ -181,5 +179,5 @@ async def websocket_handler(websocket: WebSocket, call_id: str):
         print(f"LLM WebSocket connection closed for {call_id}")
         call_response = retell.call.retrieve(call_id)
         print(call_response)
-            # if call_response.status_code == 200:
+        # if call_response.status_code == 200:
         await send_call_analyzed_webhook(call_response)
