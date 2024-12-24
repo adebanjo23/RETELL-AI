@@ -103,7 +103,7 @@ class LlmClient:
             )
 
         welcome_message = f'''
-        Ho-Ho-Ho Merry Christmas, {self.metadata.get('contact_child_name', '')}! It’s Santa here, speaking to you all the way from my magical workshop at the North Pole. My elves have been keeping a close eye on things, and they’ve told me that you’re someone very special! I’m so excited to talk with you. Tell me, how have you been this year?
+        Ho-Ho-Ho Merry Christmas Eve, {self.metadata.get('contact_child_name', '')}! It’s Santa here, calling to remind you that tonight is the most magical night of the year! My elves have been keeping an eye on things from the North Pole, and they tell me you’ve been so wonderfully good this year—just as I knew you would! They’re so excited that we’re bringing a special gift just for you. How are you feeling on this special day, my dear?
         '''
 
         # Add welcome message to history
