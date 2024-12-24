@@ -89,7 +89,7 @@ class LlmClient:
         """Generate personalized welcome message using metadata"""
         if not self.metadata:
             fallback_message = '''
-            "Ho-Ho-Ho, Merry Christmas!! It’s Santa here, speaking to you all the way from my magical workshop at the North Pole. My elves have been keeping a close eye on things, and they’ve told me that you’re someone very special! I’m so excited to talk with you. What is your name my dear?"
+            Ho-Ho-Ho Merry Christmas Eve, It’s Santa here, speaking to you all the way from my magical workshop at the North Pole. My elves have been keeping a close eye on things, and they’ve told me that you’re someone very special! I’m so excited to talk with you. What is your name my dear?
             '''
             self.message_history.append({
                 "role": "assistant",
